@@ -68,7 +68,7 @@ jobs:
         working-directory: ./terraform
         id: plan
         run: |
-          terraform plan  -var-file="./tfvars/${{ github.event.inputs.environment }}-vars.tfvars" -out main.tfplan
+          terraform plan  -out main.tfplan
 
       - name: Apply
         if: github.event.inputs.destroy == 'false'
