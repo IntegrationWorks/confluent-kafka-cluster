@@ -25,8 +25,8 @@ jobs:
       ARM_TENANT_ID: ${{secrets.ARM_TENANT_ID}}
       ARM_SUBSCRIPTION_ID: ${{secrets.ARM_SUBSCRIPTION_ID}}
       # Terraform variables
-      CONFLUENT_CLOUD_API_KEY: ${{secrets.CONFLUENT_CLOUD_API_KEY}}
-      CONFLUENT_CLOUD_API_SECRET: ${{secrets.CONFLUENT_CLOUD_API_SECRET}}
+      TF_VAR_confluent_cloud_api_key: ${{secrets.CONFLUENT_CLOUD_API_KEY}}
+      TF_VAR_confluent_cloud_api_secret: ${{secrets.CONFLUENT_CLOUD_API_SECRET}}
       
       
 
