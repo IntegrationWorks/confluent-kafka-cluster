@@ -1,6 +1,5 @@
-data "confluent_environment" "development" {
+resource "confluent_environment" "development" {
   display_name = "Development"
-
 }
 
 resource "confluent_kafka_cluster" "basic" {
