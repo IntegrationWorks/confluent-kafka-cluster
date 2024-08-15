@@ -76,6 +76,12 @@ jobs:
         run: |
           terraform apply "main.tfplan"
 
+      - name: Apply
+        if: github.event.inputs.destroy == 'false'
+        working-directory: ./terraform
+        run: |
+          terraform output resource-ids
+
       - name: Terraform Destroy
         if: github.event.inputs.destroy == 'true'
         working-directory: ./terraform
