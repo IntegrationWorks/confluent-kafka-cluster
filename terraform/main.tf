@@ -1,9 +1,6 @@
-resource "confluent_environment" "development" {
+data "confluent_environment" "development" {
   display_name = "Development"
 
-  lifecycle {
-    prevent_destroy = true
-  }
 }
 
 resource "confluent_kafka_cluster" "basic" {
@@ -14,12 +11,9 @@ resource "confluent_kafka_cluster" "basic" {
   basic {}
 
   environment {
-    id = confluent_environment.development.id
+    id = data.confluent_environment.development.id
   }
 
-  lifecycle {
-    prevent_destroy = true
-  }
 }
 
 resource "confluent_service_account" "app-manager" {
